@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/shortener_style.css'%}">
+    <title>Exchange App</title>
+</head>
+<body>
+    <a class="btn btn-outline-light me-2" href="/users/shortener">Home</a>
+    <a class="btn btn-outline-light me-2" href="{% url 'logout' %}">Logout</a>
+    <a class="btn btn-outline-light me-2" href="{% url 'login' %}">Login</a>
+    <a class="btn btn-outline-light me-2" href="{% url 'register' %}">Sign-in</a>
+    <div class="container">
+        <div class="row">
+            <div class="card box-shadow m-2 form-wrap">
+                <div class="card-header text-center">
+                    <h3> URL shortener </h3>
+                </div>
+                {% if user.is_authenticated %}
+                    <div class="form-group col-md-2 mb-0">
+                        <label for="short urls"></label>
+                        <select class="form-control" id="short urls" name="short urls" value="{{ url }}">
+                            {% for url in short_urls %}
+                                <option value="{{ url }}">{{url}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                {% endif %}
+                <form id="form" class="p-3" action='' method="POST">
+                    {% csrf_token %}
+                    <div class="form-group col-md-4 mb-0">
+                        <label for="link">Input url</label>
+                        <input id='link' type="text" class="form-control" placeholder="URL" name="processing-link">
+                    </div>
+                     <div class="submit-btn mt-3">
+                        <button type="submit" class="btn btn-primary"> Cutting </button>
+                    </div>
+                    {% if short_url %}
+                        <div class="form-group col-md-4 mb-0">
+                            <label for="out">Short url</label>
+                            <input id='out' type="text" class="form-control" placeholder="OUT" {% if short_url %} value="{{ short_url }}" {% endif %}>
+                        </div>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
