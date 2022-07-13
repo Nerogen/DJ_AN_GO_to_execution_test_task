@@ -15,7 +15,7 @@
 ## 😎 About site
 ### Home page
 Greeting the user and transferring to the page with the url shortener
-![Screenshot (1370)](https://user-images.githubusercontent.com/72101790/178819102-4c03fa25-eec6-436a-9360-7f76ad42e0bd.png)
+![Screenshot (1371)](https://user-images.githubusercontent.com/72101790/178828878-e674f49a-e0b4-4b05-8271-1428e39f4f95.png)
 ### URL Shortener
 Input your url in field and press on button "cutting", then get your short link!)
 
