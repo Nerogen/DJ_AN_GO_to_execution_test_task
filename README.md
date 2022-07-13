@@ -1,5 +1,5 @@
 ### _Welcome to my repository!_
-#### _Here you can view my site on Django: (link of deploy)
+#### _Here you can view my site on Django: https://nerogen.github.io/DJ_AN_GO_to_execution_test_task/
 ## 🎸 Stack:
 - Language: Python🐍 version 3.10✅.
 - Development approach: Django🔨 version 4.0.6🔥.
